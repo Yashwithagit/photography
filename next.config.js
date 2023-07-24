@@ -6,7 +6,7 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
-  basePath: "/photo",
+  basePath: "/photography",
 };
 
 module.exports = nextConfig;

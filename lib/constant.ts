@@ -1,4 +1,4 @@
-export const BASE_PATH = "/photo";
+export const BASE_PATH = "/photography";
 
 export const AppColors = {
   White: "#ffff",
