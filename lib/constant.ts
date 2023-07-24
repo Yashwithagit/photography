@@ -1,5 +1,3 @@
-export const BASE_PATH = "";
-
 export const AppColors = {
   White: "#ffff",
   Black: "#0000",
@@ -11,5 +9,5 @@ export const AppColors = {
 
 // Image Path
 export const ImagePath = {
-  BackGroundImage: `${BASE_PATH}/assets/background/bg.jpg`,
+  BackGroundImage: `/assets/background/bg.jpg`,
 };
