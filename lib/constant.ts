@@ -11,3 +11,22 @@ export const AppColors = {
 export const ImagePath = {
   BackGroundImage: `/assets/background/bg.jpg`,
 };
+
+export const NavbarData = [
+  {
+    title: "Home",
+    path: "/",
+  },
+  {
+    title: "Gallery",
+    path: "/",
+  },
+  {
+    title: "Feedback",
+    path: "/",
+  },
+  {
+    title: "Contact Us",
+    path: "/",
+  },
+];

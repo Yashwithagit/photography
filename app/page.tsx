@@ -1,10 +1,10 @@
-import Image from 'next/image'
-import styles from './page.module.css'
-import Link from 'next/link'
-import SignUp from './signUp/page'
+'use-client';
+
+import Navbar from './components/NavBar'
+
 
 export default function Home() {
   return (
-    <SignUp />
+    <Navbar />
   )
 }
