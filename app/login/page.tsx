@@ -42,7 +42,7 @@ const Login = () => {
       })
       .then(
         (response) => {
-          if (response.data.responseCode === 10001) {
+          if (response.data.responseCode === 100001) {
             localStorage.setItem("token", "1");
             router.push("/Dashboard");
           } else {
