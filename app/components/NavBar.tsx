@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faXmark } from "@fortawesome/free-solid-svg-icons/faXmark";
 import { useRouter } from "next/navigation";
+import PageWithAuth from "@/context/auth";
 
 
 interface NavBarItemProps {
@@ -117,4 +118,4 @@ const Navbar: React.FC = () => {
   );
 };
 
-export default Navbar;
+export default PageWithAuth(Navbar);
