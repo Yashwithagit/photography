@@ -35,7 +35,10 @@ const makePostRequest = ({
 }): Promise<any | string> => {
   const requestOption: object = {
     method: "POST",
-    headers: { ...headers },
+    headers: {
+      // 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+      ...headers
+  },
     body: uploadJSON
       ? JSON.stringify(payload)
       : new URLSearchParams(payload).toString(),
