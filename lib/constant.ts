@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 export const AppColors = {
   White: "#ffff",
   Black: "#0000",
@@ -15,11 +17,30 @@ export const ImagePath = {
 export const NavbarData = [
   {
     title: "Home",
-    path: "/",
+    path: "/dashBoard",
   },
   {
     title: "Gallery",
+    path: "/gallery",
+  },
+  {
+    title: "Feedback",
     path: "/",
+  },
+  {
+    title: "Contact Us",
+    path: "/",
+  },
+  {
+    title: "Logout",
+    path: "/",
+  },
+];
+
+export const FooterLinkList = [
+  {
+    title: "Gallery",
+    path: "/gallery",
   },
   {
     title: "Feedback",
@@ -30,6 +51,3 @@ export const NavbarData = [
     path: "/",
   },
 ];
-
-
-// header 
