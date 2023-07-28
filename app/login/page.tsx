@@ -44,7 +44,7 @@ const Login = () => {
         (response) => {
           if (response.data.responseCode === 100001) {
             localStorage.setItem("token", "1");
-            router.push("/Dashboard");
+            router.push("/dashBoard");
           } else {
             alert("Invalid User Name and Password");
           }
