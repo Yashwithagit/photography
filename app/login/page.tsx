@@ -50,13 +50,13 @@ const Login = () => {
               showConfirmButton: false,
               timer: 1000
             }).then((result) => {
-              if(result.isDismissed){
-              /* Read more about handling dismissals below */
-              localStorage.setItem("token", response.data.responseData[0].user_id);
-              router.push("/Dashboard");
+              if (result.isDismissed) {
+                /* Read more about handling dismissals below */
+                localStorage.setItem("token", response.data.responseData[0].user_id);
+                router.push("/dashBoard");
               }
             })
-            
+
           } else {
             alert("Invalid User Name and Password");
           }
