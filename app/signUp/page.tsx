@@ -18,6 +18,7 @@ import axios from "axios";
 import { API_BASE_PATH, userSignup } from "@/lib/apiPath";
 import { useRouter } from "next/navigation";
 import Swal from "sweetalert2";
+import { NextPage } from "next";
 
 interface FormDataProps {
   email?: string;
@@ -26,14 +27,14 @@ interface FormDataProps {
   username?: string;
   address?: string;
 }
-const SignUp: React.FC<FormDataProps> = () => {
+const SignUp: NextPage = () => {
   const router = useRouter();
   const [formData, setFormData] = useState<FormDataProps>({
     username: "",
     email: "",
     password: "",
     address: "",
-    contact:""
+    contact: ""
   });
 
   // handle Sign Up form submit
@@ -61,11 +62,11 @@ const SignUp: React.FC<FormDataProps> = () => {
               showConfirmButton: false,
               timer: 2000
             }).then((result) => {
-              if(result.isDismissed){
-            localStorage.setItem("token", "1");
-            router.push("/login");
+              if (result.isDismissed) {
+                localStorage.setItem("token", "1");
+                router.push("/login");
               }
-              })
+            })
           } else {
             Swal.fire({
               icon: 'error',
@@ -147,8 +148,8 @@ const SignUp: React.FC<FormDataProps> = () => {
               }
             />
           </FormField>
-          
-         
+
+
           <FormField>
             <FormFieldInput
               type="submit"
