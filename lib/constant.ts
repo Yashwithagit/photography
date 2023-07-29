@@ -17,7 +17,7 @@ export const ImagePath = {
 export const NavbarData = [
   {
     title: "Home",
-    path: "/dashBoard",
+    path: "/DashBoard",
   },
   {
     title: "Gallery",

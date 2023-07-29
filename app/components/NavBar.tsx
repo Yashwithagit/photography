@@ -103,7 +103,7 @@ const Navbar: React.FC = () => {
     setIsOpen(!isOpen);
   };
   const handleOnClickMenuItem = (path: string) => {
-    console.log("pathe",path)
+   
     // if the path is a empty string then page will redirected to login
     if (path === '/') {
       alert("logout")
