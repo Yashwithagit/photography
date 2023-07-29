@@ -33,7 +33,7 @@ const SignUp: React.FC<FormDataProps> = () => {
     email: "",
     password: "",
     address: "",
-    contact:""
+    contact: "",
   });
 
   // handle Sign Up form submit
@@ -56,23 +56,22 @@ const SignUp: React.FC<FormDataProps> = () => {
         (response) => {
           if (response.data.responseCode === 100001) {
             Swal.fire({
-              icon: 'success',
-              title: 'Thanks for SignUp',
+              icon: "success",
+              title: "Thanks for SignUp",
               showConfirmButton: false,
-              timer: 2000
+              timer: 2000,
             }).then((result) => {
-              if(result.isDismissed){
-            localStorage.setItem("token", "1");
-            router.push("/login");
+              if (result.isDismissed) {
+                router.push("/login");
               }
-              })
+            });
           } else {
             Swal.fire({
-              icon: 'error',
-              title: 'Something went wrong',
+              icon: "error",
+              title: "Something went wrong",
               showConfirmButton: false,
-              timer: 1500
-            })
+              timer: 1500,
+            });
           }
         },
         (error) => {
@@ -94,7 +93,8 @@ const SignUp: React.FC<FormDataProps> = () => {
               name={formData.email}
               value={formData.email}
               type="email"
-              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" title="xyz@something.com"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$"
+              title="xyz@something.com"
               required
               placeholder="Email"
               onChange={(e) =>
@@ -124,11 +124,13 @@ const SignUp: React.FC<FormDataProps> = () => {
             <FormFieldInput
               name={String(formData.contact)}
               value={String(formData.contact)}
-              type="tel" pattern="[0-9]{10}" title="10 numeric characters only"
+              type="tel"
+              pattern="[0-9]{10}"
+              title="10 numeric characters only"
               required
               placeholder="Contact"
               onChange={(e) =>
-                setFormData({ ...formData, contact: (e.target.value) })
+                setFormData({ ...formData, contact: e.target.value })
               }
             />
           </FormField>
@@ -147,13 +149,9 @@ const SignUp: React.FC<FormDataProps> = () => {
               }
             />
           </FormField>
-          
-         
+
           <FormField>
-            <FormFieldInput
-              type="submit"
-              value="SIGN UP"
-            />
+            <FormFieldInput type="submit" value="SIGN UP" />
           </FormField>
         </FormContainer>
 

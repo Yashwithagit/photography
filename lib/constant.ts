@@ -7,6 +7,8 @@ export const AppColors = {
   LightBlue: "#2691d9",
   LightShadeBlue: "#3498db",
   DarkGrey: "#222",
+  LightPurpleBlue:"#c8e8e9"
+
 };
 
 // Image Path
@@ -29,7 +31,7 @@ export const NavbarData = [
   },
   {
     title: "Contact Us",
-    path: "/",
+    path: "/contactus",
   },
   {
     title: "Logout",
