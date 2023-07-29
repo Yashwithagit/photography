@@ -22,7 +22,7 @@ import Swal from "sweetalert2";
 interface FormDataProps {
   email?: string;
   password?: string;
-  contact?: number;
+  contact?: string;
   username?: string;
   address?: string;
 }
@@ -33,7 +33,7 @@ const SignUp: React.FC<FormDataProps> = () => {
     email: "",
     password: "",
     address: "",
-    contact:0
+    contact:""
   });
 
   // handle Sign Up form submit
@@ -85,7 +85,7 @@ const SignUp: React.FC<FormDataProps> = () => {
       <PhotoGraphyBgContainer />
       <CardContainer>
         <CardHeader>Sign Up</CardHeader>
-        <FormContainer action="#">
+        <FormContainer onSubmit={onSignUpFormSubmit}>
           <FormField>
             <FormFieldIcon>
               <MdIcons.MdEmail />
@@ -93,7 +93,8 @@ const SignUp: React.FC<FormDataProps> = () => {
             <FormFieldInput
               name={formData.email}
               value={formData.email}
-              type="text"
+              type="email"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" title="xyz@something.com"
               required
               placeholder="Email"
               onChange={(e) =>
@@ -123,11 +124,11 @@ const SignUp: React.FC<FormDataProps> = () => {
             <FormFieldInput
               name={String(formData.contact)}
               value={String(formData.contact)}
-              type="number"
+              type="tel" pattern="[0-9]{10}" title="10 numeric characters only"
               required
               placeholder="Contact"
               onChange={(e) =>
-                setFormData({ ...formData, contact: parseInt(e.target.value) })
+                setFormData({ ...formData, contact: (e.target.value) })
               }
             />
           </FormField>
@@ -146,12 +147,12 @@ const SignUp: React.FC<FormDataProps> = () => {
               }
             />
           </FormField>
-
+          
+         
           <FormField>
             <FormFieldInput
               type="submit"
               value="SIGN UP"
-              onClick={(e: any) => onSignUpFormSubmit(e)}
             />
           </FormField>
         </FormContainer>
