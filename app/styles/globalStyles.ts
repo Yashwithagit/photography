@@ -2,13 +2,16 @@
 
 import { AppColors, ImagePath } from "lib/constant";
 import styled from "styled-components";
-
-export const PhotoGraphyBgContainer = styled.main`
+interface BgContainerProps {
+  filter?: string;
+}
+export const PhotoGraphyBgContainer = styled.main<BgContainerProps>`
   background: url(${ImagePath.BackGroundImage});
   height: 100vh;
   background-size: cover;
   background-position: center;
-  filter: blur(0.25rem);
+  filter: ${(props) =>
+    props.filter ? `blur(${props.filter})` : `blur(0.25rem)`};
 `;
 export const CardContainer = styled.div`
   position: absolute;
