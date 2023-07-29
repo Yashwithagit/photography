@@ -98,3 +98,12 @@ export const LinkContainer = styled.div`
 export const LinkText = styled.span`
   color: ${AppColors.SkyBlue};
 `;
+
+export const ErrorMessage = styled.p`
+  color: #bf1650;
+  
+  &::before {
+    display: inline;
+    content: "⚠ ";
+  }
+`;

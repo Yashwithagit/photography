@@ -19,6 +19,7 @@ import { API_BASE_PATH, userLogin } from "@/lib/apiPath";
 import axios from "axios";
 import { Router } from "next/router";
 import { useRouter } from "next/navigation";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const [login, setLogin] = useState({
@@ -43,8 +44,19 @@ const Login = () => {
       .then(
         (response) => {
           if (response.data.responseCode === 100001) {
-            localStorage.setItem("token", "1");
-            router.push("/Dashboard");
+            Swal.fire({
+              icon: 'success',
+              title: 'success',
+              showConfirmButton: false,
+              timer: 1000
+            }).then((result) => {
+              if(result.isDismissed){
+              /* Read more about handling dismissals below */
+              localStorage.setItem("token", response.data.responseData[0].user_id);
+              router.push("/Dashboard");
+              }
+            })
+            
           } else {
             alert("Invalid User Name and Password");
           }
