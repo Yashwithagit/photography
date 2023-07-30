@@ -98,7 +98,7 @@ const SwiperImage = styled.div`
 width: 100%;
 height: 30rem;
 :hover {
-  filter: blur(0.25rem);
+  filter: blur(0.1rem);
 }
 `
 
