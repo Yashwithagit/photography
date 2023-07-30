@@ -46,7 +46,6 @@ const SwiperComp: React.FC = () => {
         effect={'coverflow'}
         grabCursor={true}
         centeredSlides={true}
-        loop={true}
         slidesPerView={'auto'}
         coverflowEffect={{
           rotate: 0,
