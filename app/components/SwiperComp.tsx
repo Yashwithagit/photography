@@ -11,18 +11,20 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { ImagePath, slideList } from "@/lib/constant";
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowAltCircleLeft, faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 import { SwiperContainer, SwiperMobileContainer } from '@/styles/globalStyles';
+import Link from 'next/link';
 
 interface ContentProps {
   show?: boolean;
 }
 
 const SwiperComp: React.FC = () => {
-  const [list, setList] = useState(slideList)
+  const [list, setList] = useState(slideList);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
 
   const onMouseEvent = (id: number, event: boolean) => {
@@ -39,7 +41,7 @@ const SwiperComp: React.FC = () => {
 
 
   }
-
+  console.log(buttonRef)
   return (
     <>
       <SwiperContainer>
@@ -88,8 +90,10 @@ const SwiperComp: React.FC = () => {
 
               <ContentContainer show={slide?.event} >
                 <FieldTitle>Name: {slide?.title}</FieldTitle>
-                <FieldTitle>Website: {slide?.title}</FieldTitle>
+                <a target="_blank" href={slide?.link} onClick={() => alert('ghvds')}> <button ref={buttonRef}>Go to website</button></a>
               </ContentContainer>
+
+
 
             </SwiperSlide>
           ))}
@@ -121,18 +125,21 @@ const SwiperComp: React.FC = () => {
           {list.map((slide: any, index: number) => (
             <SwiperSlide key={index}>
               <SwiperImage >
+
                 <img src={slide.image} alt={slide.title} onMouseOver={() => onMouseEvent(slide?.id, true)} onMouseOut={() => onMouseEvent(slide?.id, false)} />
               </SwiperImage>
 
               <ContentContainer show={slide?.event} >
                 <FieldTitle>Name: {slide?.title}</FieldTitle>
-                <FieldTitle>Website: {slide?.title}</FieldTitle>
+                <a target="_blank" href={slide?.link} onClick={() => alert('ghvds')}> <button ref={buttonRef}>Go to website</button></a>
               </ContentContainer>
+
+
 
             </SwiperSlide>
           ))}
         </Swiper>
-      </SwiperMobileContainer>
+      </SwiperMobileContainer >
     </>
   )
 
