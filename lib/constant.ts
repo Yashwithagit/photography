@@ -66,7 +66,7 @@ export const slideList = [
   {
     id: 2,
     image: ImagePath.BackGroundImage,
-    title: "Black Adam",
+    title: "Black Adam swin",
     link: "https://www.digitalcameraworld.com/",
 
     event: false,
