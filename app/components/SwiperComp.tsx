@@ -70,7 +70,7 @@ const SwiperComp: React.FC = () => {
           }}
           // mousewheel={true}
           autoplay={{
-            // delay: 3500,
+            delay: 3500,
             disableOnInteraction: true,
           }}
           pagination={{ el: '.swiper-pagination', clickable: true }}
@@ -79,7 +79,7 @@ const SwiperComp: React.FC = () => {
             prevEl: '.swiper-button-prev',
             // clickable: true,
           }}
-          modules={[EffectCoverflow, Pagination, Navigation, Keyboard]}
+          modules={[EffectCoverflow, Pagination, Navigation, Keyboard, Autoplay]}
           className="swiper_container"
         >
           {list.map((slide: any, index: number) => (
@@ -90,7 +90,7 @@ const SwiperComp: React.FC = () => {
 
               <ContentContainer show={slide?.event} >
                 <FieldTitle>Name: {slide?.title}</FieldTitle>
-                <a target="_blank" href={slide?.link} onClick={() => alert('ghvds')}> <button ref={buttonRef}>Go to website</button></a>
+                <a target="_blank" href={slide?.link} > <Button ref={buttonRef}>Go to website</Button></a>
               </ContentContainer>
 
 
@@ -131,7 +131,7 @@ const SwiperComp: React.FC = () => {
 
               <ContentContainer show={slide?.event} >
                 <FieldTitle>Name: {slide?.title}</FieldTitle>
-                <a target="_blank" href={slide?.link} onClick={() => alert('ghvds')}> <button ref={buttonRef}>Go to website</button></a>
+                <a target="_blank" href={slide?.link} > <Button ref={buttonRef}>Go to website</Button></a>
               </ContentContainer>
 
 
@@ -181,5 +181,15 @@ const ContentContainer = styled.div<ContentProps>`
 const FieldTitle = styled.h1`
         font-size: 1.5rem;
         color: white;
+
+        `
+
+const Button = styled.button`
+          padding: 1rem;
+          background-color: #d72fee;
+          outline: none;
+          border: none;
+          border-radius: 1.5rem;
+          color: white;
 
         `
