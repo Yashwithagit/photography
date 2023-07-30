@@ -7,19 +7,19 @@ export const AppColors = {
   LightBlue: "#2691d9",
   LightShadeBlue: "#3498db",
   DarkGrey: "#222",
-  LightPurpleBlue:"#c8e8e9"
-
+  LightPurpleBlue: "#c8e8e9",
 };
 
 // Image Path
 export const ImagePath = {
   BackGroundImage: `/assets/background/bg.jpg`,
+  WeddingImage1: `/assets/wedding/wed1.jpeg`,
 };
 
 export const NavbarData = [
   {
     title: "Home",
-    path: "/Dashboard",
+    path: "/dashBoard",
   },
   {
     title: "Gallery",
@@ -62,7 +62,7 @@ export const slideList = [
     subTitle:
       "Set more than a decade after the events of the first film, learn the story of the Sully family (Jake, Neytiri, and their kids), the trouble that follows them, the lengths they go to keep each other safe, the battles they fight to stay alive, and the tragedies they endure.",
     interval: 0,
-    event:false,
+    event: false,
   },
   {
     id: 2,
@@ -81,5 +81,66 @@ export const slideList = [
       "Queen Ramonda, Shuri, M’Baku, Okoye and the Dora Milaje fight to protect their nation from intervening world powers in the wake of King T’Challa’s death. As the Wakandans strive to embrace their next chapter, the heroes must band together with the help of War Dog Nakia and Everett Ross and forge a new path for the kingdom of Wakanda.",
     interval: 2500,
     event: false,
+  },
+  {
+    id: 4,
+    image: ImagePath.BackGroundImage,
+    title: " Wakanda Forever",
+    subTitle:
+      "Queen Ramonda, Shuri, M’Baku, Okoye and the Dora Milaje fight to protect their nation from intervening world powers in the wake of King T’Challa’s death. As the Wakandans strive to embrace their next chapter, the heroes must band together with the help of War Dog Nakia and Everett Ross and forge a new path for the kingdom of Wakanda.",
+    interval: 2500,
+    event: false,
+  },
+  {
+    id: 5,
+    image: ImagePath.BackGroundImage,
+    title: " Wakanda Forever",
+    subTitle:
+      "Queen Ramonda, Shuri, M’Baku, Okoye and the Dora Milaje fight to protect their nation from intervening world powers in the wake of King T’Challa’s death. As the Wakandans strive to embrace their next chapter, the heroes must band together with the help of War Dog Nakia and Everett Ross and forge a new path for the kingdom of Wakanda.",
+    interval: 2500,
+    event: false,
+  },
+  {
+    id: 6,
+    image: ImagePath.BackGroundImage,
+    title: " Wakanda Forever",
+    subTitle:
+      "Queen Ramonda, Shuri, M’Baku, Okoye and the Dora Milaje fight to protect their nation from intervening world powers in the wake of King T’Challa’s death. As the Wakandans strive to embrace their next chapter, the heroes must band together with the help of War Dog Nakia and Everett Ross and forge a new path for the kingdom of Wakanda.",
+    interval: 2500,
+    event: false,
+  },
+];
+
+//wedding gallery
+export const gallerySlides = [
+  {
+    id: 1,
+    title: "Wedding",
+    image: ImagePath.WeddingImage1,
+  },
+  {
+    id: 2,
+    title: "Event",
+    image: ImagePath.BackGroundImage,
+  },
+  {
+    id: 3,
+    title: "Event",
+    image: ImagePath.WeddingImage1,
+  },
+  {
+    id: 4,
+    title: "Event",
+    image: ImagePath.WeddingImage1,
+  },
+  {
+    id: 5,
+    title: "Event",
+    image: ImagePath.WeddingImage1,
+  },
+  {
+    id: 6,
+    title: "Event",
+    image: ImagePath.WeddingImage1,
   },
 ];
