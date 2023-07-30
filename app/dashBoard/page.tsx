@@ -1,6 +1,7 @@
 "use client"
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
+import SwiperComp from "@/components/SwiperComp";
 import PageWithAuth from "@/context/auth";
 import { PhotoGraphyBgContainer } from "@/styles/globalStyles";
 import { NextPage } from "next";
@@ -10,7 +11,8 @@ const DashBoard: NextPage = () => {
   return (
     <>
       <NavBar />
-      <PhotoGraphyBgContainer filter="0rem" />
+      {/* <PhotoGraphyBgContainer filter="0rem" /> */}
+      <SwiperComp />
       <Footer />
     </>
   );
