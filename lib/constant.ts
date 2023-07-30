@@ -50,7 +50,7 @@ export const FooterLinkList = [
   },
   {
     title: "Contact Us",
-    path: "/",
+    path: "/contactus",
   },
 ];
 
