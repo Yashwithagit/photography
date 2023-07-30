@@ -21,26 +21,33 @@ interface ContentProps {
 }
 
 const SwiperComp: React.FC = () => {
-  useEffect(() => {
-    console.log(slideList)
-  }, [slideList])
+  const [list,setList]=useState(slideList)
+  
 
   const onMouseEvent = (id: number, event: boolean) => {
-    slideList.map((item) => {
-      if (item.id === id && event === true) {
-        item['event'] = true;
-        return item
+    
+   const data= list.filter((item) => {
+      console.log(item.id,item.event)
+      if(item.id===id)
+      {
+        item['event']=!item.event
       }
-      if (item.id === id && event === false) {
-        item['event'] = false;
-        return item
-      }
-
+      // if (item.id === id && event === true) {
+      //   item['event'] = true;
+      
+      // }
+      // if (item.id === id && event === false) {
+      //   item['event'] = false;
+        
+      // }
+      return item
     })
-    console.log(id)
+   
+    setList(data);
 
 
   }
+
   return (
     <div className="container">
 
@@ -65,12 +72,12 @@ const SwiperComp: React.FC = () => {
         modules={[EffectCoverflow, Pagination, Navigation]}
         className="swiper_container"
       >
-        {slideList.map((slide: any, index: number) => (
+        {list.map((slide: any, index: number) => (
           <SwiperSlide key={index}>
             <SwiperImage onMouseOver={() => onMouseEvent(slide?.id, true)} onMouseOut={() => onMouseEvent(slide?.id, false)}>
               <img src={slide.image} alt={slide.title} />
             </SwiperImage>
-            <ContentContainer show={true} key={index}>
+            <ContentContainer show={slide?.event} key={index}>
               <FieldTitle>Name: {slide?.title}</FieldTitle>
               <FieldTitle>Website: {slide?.title}</FieldTitle>
             </ContentContainer>
