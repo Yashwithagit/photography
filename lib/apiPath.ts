@@ -4,3 +4,4 @@ export const API_BASE_PATH = "http://localhost:4111/api/";
 export const userLogin = "userLogin";
 export const userSignup = "userSignUp";
 export const userContactUs = "contactUs";
+export const userFeedback = "feedback";

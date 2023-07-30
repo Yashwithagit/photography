@@ -1,11 +1,22 @@
+'use client';
+
+import Footer from '@/components/Footer'
 import NavBar from '@/components/NavBar'
 import { NextPage } from 'next'
 import React from 'react'
+import { gallerySlides } from '@/lib/constant';
+import GallerySwiper from '@/components/GallerySwiper';
+import { PageTitle } from '@/styles/globalStyles';
+import PageWithAuth from '@/context/auth';
 
 const Gallery: NextPage = () => {
+
   return (
-    <><NavBar /><div>hello</div></>
+    <><NavBar /><PageTitle>Gallery</PageTitle>
+
+      <GallerySwiper slides={gallerySlides} />
+      <Footer /></>
   )
 }
 
-export default Gallery
+export default PageWithAuth(Gallery)

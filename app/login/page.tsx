@@ -53,7 +53,7 @@ const Login = () => {
               if (result.isDismissed) {
                 /* Read more about handling dismissals below */
                 localStorage.setItem("token", response.data.responseData[0].user_id);
-                router.push("/Dashboard");
+                router.push("/dashBoard");
               }
             })
 

@@ -7,19 +7,19 @@ export const AppColors = {
   LightBlue: "#2691d9",
   LightShadeBlue: "#3498db",
   DarkGrey: "#222",
-  LightPurpleBlue:"#c8e8e9"
-
+  LightPurpleBlue: "#c8e8e9",
 };
 
 // Image Path
 export const ImagePath = {
   BackGroundImage: `/assets/background/bg.jpg`,
+  WeddingImage1: `/assets/wedding/wed1.jpeg`,
 };
 
 export const NavbarData = [
   {
     title: "Home",
-    path: "/Dashboard",
+    path: "/dashBoard",
   },
   {
     title: "Gallery",
@@ -27,7 +27,7 @@ export const NavbarData = [
   },
   {
     title: "Feedback",
-    path: "/",
+    path: "/feedback",
   },
   {
     title: "Contact Us",
@@ -46,7 +46,7 @@ export const FooterLinkList = [
   },
   {
     title: "Feedback",
-    path: "/",
+    path: "/feedback",
   },
   {
     title: "Contact Us",
@@ -59,27 +59,242 @@ export const slideList = [
     id: 1,
     image: ImagePath.BackGroundImage,
     title: "The Way of Water",
-    subTitle:
-      "Set more than a decade after the events of the first film, learn the story of the Sully family (Jake, Neytiri, and their kids), the trouble that follows them, the lengths they go to keep each other safe, the battles they fight to stay alive, and the tragedies they endure.",
-    interval: 0,
-    event:false,
+    link: "https://www.digitalcameraworld.com/",
+
+    event: false,
   },
   {
     id: 2,
     image: ImagePath.BackGroundImage,
     title: "Black Adam",
-    subTitle:
-      "Nearly 5,000 years after he was bestowed with the almighty powers of the Egyptian gods—and imprisoned just as quickly—Black Adam is freed from his earthly tomb, ready to unleash his unique form of justice on the modern world.",
-    interval: 500,
+    link: "https://www.digitalcameraworld.com/",
+
     event: false,
   },
   {
     id: 3,
     image: ImagePath.BackGroundImage,
     title: " Wakanda Forever",
-    subTitle:
-      "Queen Ramonda, Shuri, M’Baku, Okoye and the Dora Milaje fight to protect their nation from intervening world powers in the wake of King T’Challa’s death. As the Wakandans strive to embrace their next chapter, the heroes must band together with the help of War Dog Nakia and Everett Ross and forge a new path for the kingdom of Wakanda.",
-    interval: 2500,
+    link: "https://www.digitalcameraworld.com/",
     event: false,
+  },
+  {
+    id: 4,
+    image: ImagePath.BackGroundImage,
+    title: " Wakanda Forever",
+    link: "https://www.digitalcameraworld.com/",
+    event: false,
+  },
+  {
+    id: 5,
+    image: ImagePath.BackGroundImage,
+    title: " Wakanda Forever",
+    link: "https://www.digitalcameraworld.com/",
+    event: false,
+  },
+  {
+    id: 6,
+    image: ImagePath.BackGroundImage,
+    title: " Wakanda Forever",
+    link: "https://www.digitalcameraworld.com/",
+    event: false,
+  },
+];
+
+//wedding gallery
+export const gallerySlides = [
+  {
+    id: 1,
+    title: "Wedding",
+    image: ImagePath.WeddingImage1,
+  },
+  {
+    id: 2,
+    title: "Event",
+    image: ImagePath.BackGroundImage,
+  },
+  {
+    id: 3,
+    title: "Event",
+    image: ImagePath.WeddingImage1,
+  },
+  {
+    id: 4,
+    title: "Event",
+    image: ImagePath.WeddingImage1,
+  },
+  {
+    id: 5,
+    title: "Event",
+    image: ImagePath.WeddingImage1,
+  },
+  {
+    id: 6,
+    title: "Event",
+    image: ImagePath.WeddingImage1,
+  },
+];
+export const galleryViewPhotoList = [
+  {
+    id: 1,
+    title: "Wedding",
+    mainImage: ImagePath.WeddingImage1,
+    subImageList: [
+      {
+        id: 1,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 2,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 3,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 4,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 5,
+        image: ImagePath.BackGroundImage,
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "Event",
+    mainImage: ImagePath.BackGroundImage,
+    subImageList: [
+      {
+        id: 1,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 2,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 3,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 4,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 5,
+        image: ImagePath.BackGroundImage,
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "Event",
+    mainImage: ImagePath.WeddingImage1,
+    subImageList: [
+      {
+        id: 1,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 2,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 3,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 4,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 5,
+        image: ImagePath.BackGroundImage,
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: "Event",
+    mainImage: ImagePath.WeddingImage1,
+    subImageList: [
+      {
+        id: 1,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 2,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 3,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 4,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 5,
+        image: ImagePath.BackGroundImage,
+      },
+    ],
+  },
+  {
+    id: 5,
+    title: "Event",
+    mainImage: ImagePath.WeddingImage1,
+    subImageList: [
+      {
+        id: 1,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 2,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 3,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 4,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 5,
+        image: ImagePath.BackGroundImage,
+      },
+    ],
+  },
+  {
+    id: 6,
+    title: "Event",
+    mainImage: ImagePath.WeddingImage1,
+    subImageList: [
+      {
+        id: 1,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 2,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 3,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 4,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 5,
+        image: ImagePath.BackGroundImage,
+      },
+    ],
   },
 ];
