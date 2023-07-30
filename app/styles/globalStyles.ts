@@ -125,4 +125,29 @@ export const BackArrowContainer = styled.div`
   display: flex;
   padding-top: 2rem;
   padding-left: 5rem;
+  @media screen and (max-width: 768px) {
+    padding-left: 3rem;
+  }
+`;
+
+export const SwiperContainer = styled.div`
+  max-width: 124rem;
+  padding: 4rem;
+  margin: 0 auto;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`;
+
+export const SwiperMobileContainer = styled.main`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  display: none;
+  padding-bottom: 3rem;
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
 `;

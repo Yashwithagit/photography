@@ -17,6 +17,7 @@ import { ImagePath } from '@/lib/constant';
 import { type } from 'os';
 import styled from 'styled-components';
 import { useRouter } from 'next/navigation';
+import { SwiperContainer, SwiperMobileContainer } from '@/styles/globalStyles';
 
 type SlideType = {
   image?: string;
@@ -30,73 +31,100 @@ const GallerySwiper: React.FC<GallerySwiperProps> = ({
 }) => {
   const router = useRouter()
   return (
+    <>
+      <SwiperContainer>
+        <Swiper
+          keyboard={{
+            enabled: true,
+          }}
+          effect={'coverflow'}
+          grabCursor={true}
+          loop={true}
+          slidesPerView={2}
+          coverflowEffect={{
+            rotate: 0,
+            stretch: 0,
+            depth: 100,
+            modifier: 2.5,
+          }}
+          breakpoints={{
 
-    <div className="container">
-      <Swiper
-        keyboard={{
-          enabled: true,
-        }}
-        effect={'coverflow'}
-        grabCursor={true}
-        loop={true}
-        slidesPerView={2}
-        coverflowEffect={{
-          rotate: 0,
-          stretch: 0,
-          depth: 100,
-          modifier: 2.5,
-        }}
-        breakpoints={{
-
-          769: {
-            slidesPerView: 2,
-
-
-          },
-        }}
-        // mousewheel={true}
-        autoplay={{
-          // delay: 3500,
-          disableOnInteraction: true,
-        }}
-        pagination={{ el: '.swiper-pagination', clickable: true }}
-        navigation={{
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-          // clickable: true,
-        }}
-        modules={[EffectCoverflow, Pagination, Navigation, Keyboard]}
-        className="swiper_container"
-      >
-        {
-          slides?.map((slide: any, index: number) => (
-            <SwiperSlide key={index} >
-              <SwiperImage >
-                <img src={slide?.image} alt="slide_image" onClick={() => { router.push(`/galleryView?id=${slide.id}`) }} /></SwiperImage>
-
-              <ContentContainer onClick={() => { alert('clicked'), router.push(`/galleryView?id=${slide.id}`) }}>
-                <FieldTitle> {slide?.title}</FieldTitle>
-              </ContentContainer>
-            </SwiperSlide>
-          ))
-        }
+            769: {
+              slidesPerView: 2,
 
 
+            },
+          }}
+          // mousewheel={true}
+          autoplay={{
+            // delay: 3500,
+            disableOnInteraction: true,
+          }}
+          pagination={{ el: '.swiper-pagination', clickable: true }}
+          navigation={{
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+            // clickable: true,
+          }}
+          modules={[EffectCoverflow, Pagination, Navigation, Keyboard]}
+          className="swiper_container"
+        >
+          {
+            slides?.map((slide: any, index: number) => (
+              <SwiperSlide key={index} >
+                <SwiperImage >
+                  <img src={slide?.image} alt="slide_image" onClick={() => { router.push(`/galleryView?id=${slide.id}`) }} /></SwiperImage>
+
+                <ContentContainer onClick={() => { alert('clicked'), router.push(`/galleryView?id=${slide.id}`) }}>
+                  <FieldTitle> {slide?.title}</FieldTitle>
+                </ContentContainer>
+              </SwiperSlide>
+            ))
+          }
 
 
 
 
-        <div className="slider-controler">
-          <div className="swiper-button-prev slider-arrow" >
-            <FontAwesomeIcon icon={faArrowAltCircleLeft} style={{ color: "#17cf97" }} />
+
+
+          <div className="slider-controler">
+            <div className="swiper-button-prev slider-arrow" >
+              <FontAwesomeIcon icon={faArrowAltCircleLeft} style={{ color: "#17cf97" }} />
+            </div>
+            <div className="swiper-button-next slider-arrow">
+              <FontAwesomeIcon icon={faArrowAltCircleRight} style={{ color: "#17cf97" }} />
+            </div>
+            <div className="swiper-pagination"></div>
           </div>
-          <div className="swiper-button-next slider-arrow">
-            <FontAwesomeIcon icon={faArrowAltCircleRight} style={{ color: "#17cf97" }} />
-          </div>
-          <div className="swiper-pagination"></div>
-        </div>
-      </Swiper>
-    </div>
+        </Swiper>
+      </SwiperContainer>
+      <SwiperMobileContainer>
+        <Swiper
+          cssMode={true}
+          navigation={true}
+          pagination={true}
+          mousewheel={true}
+          keyboard={true}
+          modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+          className="mobile-swiper"
+        >
+
+          {
+            slides?.map((slide: any, index: number) => (
+              <SwiperSlide key={index} >
+                <SwiperImage >
+                  <img src={slide?.image} alt="slide_image" onClick={() => { router.push(`/galleryView?id=${slide.id}`) }} /></SwiperImage>
+
+                <ContentContainer onClick={() => { router.push(`/galleryView?id=${slide.id}`) }}>
+                  <FieldTitle> {slide?.title}</FieldTitle>
+                </ContentContainer>
+              </SwiperSlide>
+            ))
+          }
+        </Swiper>
+      </SwiperMobileContainer>
+    </>
+
 
   )
 }
@@ -112,6 +140,11 @@ flex-direction: column;
 left: 24%;
 gap:1rem;
 height: 70%;
+  @media screen and (max-width:768px) {
+  width: 55%;
+  margin-top: 4rem;
+  
+}
 
 `
 const FieldTitle = styled.h1`
@@ -123,6 +156,12 @@ const FieldTitle = styled.h1`
 `
 const SwiperImage = styled.div`
 height: 25rem;
+@media screen and (max-width:768px) {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  
+}
 
 
 `

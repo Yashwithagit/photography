@@ -88,12 +88,22 @@ padding: 2rem;
 margin: 1.5rem 0rem;
 border-radius: 1.5rem;
 
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   background-color: #657582;
    box-shadow: 5px 4px 5px rgba(173, 148, 148, 0.4);
   grid-gap: 2rem;
   height: 14rem;
   overflow-y: scroll;
+  @media screen and (max-width: 768px){
+    grid-template-columns: repeat(3, 1fr);
+    height: 26rem;
+    margin: 2.5rem 0rem;
+  }
+  @media screen and (max-width: 465px){
+    grid-template-columns: repeat(2, 1fr);
+    height: 26rem;
+    margin: 2.5rem 0rem;
+  }
 
 
 `

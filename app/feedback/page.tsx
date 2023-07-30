@@ -74,8 +74,8 @@ const Feedback: NextPage = () => {
     <>
       <NavBar />
       <section>
-        <ContactUsBody>
-          <ContactUsContainer>
+        <FeedbackOuterContainer>
+          <FeedbackContainer>
             <SectionHeaderContainer>
               <Heading>TAKE A TIME TO GIVE A FEEDBACK</Heading>
 
@@ -102,8 +102,8 @@ const Feedback: NextPage = () => {
                 </FlexItem>
               </FlexContainer>
             </FormContainer>
-          </ContactUsContainer>
-        </ContactUsBody>
+          </FeedbackContainer>
+        </FeedbackOuterContainer>
       </section >
       <Footer />
     </>
@@ -111,7 +111,7 @@ const Feedback: NextPage = () => {
 };
 
 export default PageWithAuth(Feedback);
-const ContactUsBody = styled.div`
+const FeedbackOuterContainer = styled.div`
  padding: 2rem auto;
   width: 100%;
   background: #c8e8e9;
@@ -119,13 +119,16 @@ const ContactUsBody = styled.div`
   align-items: center;
   justify-content: center;
 `;
-const ContactUsContainer = styled.div`
+const FeedbackContainer = styled.div`
   width: 85%;
   margin: 3rem 0rem;
   background: ${AppColors.LightPurpleBlue};
   border-radius: 6px;
   padding: 1rem 4rem;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  @media screen  and (max-width:768px){
+    padding: 1rem 2rem;
+  }
 `;
 const SectionHeaderContainer = styled.div`
   display: flex;
@@ -148,7 +151,6 @@ const FlexContainer = styled.div`
 const FlexItem = styled.div`
   flex: 1; /* Each item takes equal width */
   margin-bottom: 0.3rem; /* Optional, to add spacing between input fields in mobile view */
-  padding-left: 2rem;
 `;
 
 const TextAreaField = styled.textarea`

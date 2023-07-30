@@ -25,6 +25,7 @@ box-shadow: 0 5px 15px rgba(0,0,0,0.06);
 
   @media (min-width: 768px) {
     flex-direction: row;
+    height: 5%;
   }
 `;
 const NavBar = styled.main<NavBarItemProps>`
@@ -39,10 +40,10 @@ const NavBar = styled.main<NavBarItemProps>`
   align-items: flex-start;
   flex-direction: column;
   position: fixed;
-  top: 85px;
+  top: 10%;
   right:${(props) => props.active ? '-300px' : "0px"} ;
   width: 300px;
-  z-index: 1;
+  z-index: 2;
   height: 100vh;
   background: #2a3239;
   box-shadow: 0 40px 60px rgba(0,0,0,0.1);
