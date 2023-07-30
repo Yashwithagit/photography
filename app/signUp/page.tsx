@@ -18,6 +18,7 @@ import axios from "axios";
 import { API_BASE_PATH, userSignup } from "@/lib/apiPath";
 import { useRouter } from "next/navigation";
 import Swal from "sweetalert2";
+import { NextPage } from "next";
 
 interface FormDataProps {
   email?: string;
@@ -26,7 +27,7 @@ interface FormDataProps {
   username?: string;
   address?: string;
 }
-const SignUp: React.FC<FormDataProps> = () => {
+const SignUp: NextPage = () => {
   const router = useRouter();
   const [formData, setFormData] = useState<FormDataProps>({
     username: "",
@@ -149,6 +150,7 @@ const SignUp: React.FC<FormDataProps> = () => {
               }
             />
           </FormField>
+
 
           <FormField>
             <FormFieldInput type="submit" value="SIGN UP" />
