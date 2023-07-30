@@ -11,6 +11,7 @@ import { useRouter, useSearchParams } from 'next/navigation'
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import PageWithAuth from '@/context/auth';
 
 const GalleryView: NextPage = () => {
   const searchParams = useSearchParams()
@@ -58,7 +59,7 @@ const GalleryView: NextPage = () => {
   )
 }
 
-export default GalleryView
+export default PageWithAuth(GalleryView)
 
 const GalleryViewImage = styled.div`
   width: 25rem;

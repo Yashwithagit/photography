@@ -27,7 +27,7 @@ export const NavbarData = [
   },
   {
     title: "Feedback",
-    path: "/",
+    path: "/feedback",
   },
   {
     title: "Contact Us",
@@ -46,7 +46,7 @@ export const FooterLinkList = [
   },
   {
     title: "Feedback",
-    path: "/",
+    path: "/feedback",
   },
   {
     title: "Contact Us",

@@ -7,6 +7,7 @@ import React from 'react'
 import { gallerySlides } from '@/lib/constant';
 import GallerySwiper from '@/components/GallerySwiper';
 import { PageTitle } from '@/styles/globalStyles';
+import PageWithAuth from '@/context/auth';
 
 const Gallery: NextPage = () => {
 
@@ -18,4 +19,4 @@ const Gallery: NextPage = () => {
   )
 }
 
-export default Gallery
+export default PageWithAuth(Gallery)
