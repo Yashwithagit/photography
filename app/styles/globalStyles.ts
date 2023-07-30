@@ -104,9 +104,25 @@ export const LinkText = styled.span`
 
 export const ErrorMessage = styled.p`
   color: #bf1650;
-  
+
   &::before {
     display: inline;
     content: "⚠ ";
   }
+`;
+
+export const PageTitle = styled.h1`
+  font-size: 3.5rem;
+  text-align: center;
+  margin: 1rem 0rem;
+  padding: 0;
+`;
+
+export const BackArrowContainer = styled.div`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  display: flex;
+  padding-top: 2rem;
+  padding-left: 5rem;
 `;

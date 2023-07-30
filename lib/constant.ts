@@ -144,3 +144,167 @@ export const gallerySlides = [
     image: ImagePath.WeddingImage1,
   },
 ];
+export const galleryViewPhotoList = [
+  {
+    id: 1,
+    title: "Wedding",
+    mainImage: ImagePath.WeddingImage1,
+    subImageList: [
+      {
+        id: 1,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 2,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 3,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 4,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 5,
+        image: ImagePath.BackGroundImage,
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "Event",
+    mainImage: ImagePath.BackGroundImage,
+    subImageList: [
+      {
+        id: 1,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 2,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 3,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 4,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 5,
+        image: ImagePath.BackGroundImage,
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "Event",
+    mainImage: ImagePath.WeddingImage1,
+    subImageList: [
+      {
+        id: 1,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 2,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 3,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 4,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 5,
+        image: ImagePath.BackGroundImage,
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: "Event",
+    mainImage: ImagePath.WeddingImage1,
+    subImageList: [
+      {
+        id: 1,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 2,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 3,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 4,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 5,
+        image: ImagePath.BackGroundImage,
+      },
+    ],
+  },
+  {
+    id: 5,
+    title: "Event",
+    mainImage: ImagePath.WeddingImage1,
+    subImageList: [
+      {
+        id: 1,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 2,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 3,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 4,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 5,
+        image: ImagePath.BackGroundImage,
+      },
+    ],
+  },
+  {
+    id: 6,
+    title: "Event",
+    mainImage: ImagePath.WeddingImage1,
+    subImageList: [
+      {
+        id: 1,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 2,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 3,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 4,
+        image: ImagePath.BackGroundImage,
+      },
+      {
+        id: 5,
+        image: ImagePath.BackGroundImage,
+      },
+    ],
+  },
+];

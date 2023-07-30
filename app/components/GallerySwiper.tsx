@@ -16,6 +16,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { ImagePath } from '@/lib/constant';
 import { type } from 'os';
 import styled from 'styled-components';
+import { useRouter } from 'next/navigation';
 
 type SlideType = {
   image?: string;
@@ -27,7 +28,7 @@ interface GallerySwiperProps {
 const GallerySwiper: React.FC<GallerySwiperProps> = ({
   slides
 }) => {
-
+  const router = useRouter()
   return (
 
     <div className="container">
@@ -69,11 +70,11 @@ const GallerySwiper: React.FC<GallerySwiperProps> = ({
       >
         {
           slides?.map((slide: any, index: number) => (
-            <SwiperSlide key={index}>
+            <SwiperSlide key={index} >
               <SwiperImage >
-                <img src={slide?.image} alt="slide_image" /></SwiperImage>
+                <img src={slide?.image} alt="slide_image" onClick={() => { router.push(`/galleryView?id=${slide.id}`) }} /></SwiperImage>
 
-              <ContentContainer>
+              <ContentContainer onClick={() => { alert('clicked'), router.push(`/galleryView?id=${slide.id}`) }}>
                 <FieldTitle> {slide?.title}</FieldTitle>
               </ContentContainer>
             </SwiperSlide>
