@@ -21,28 +21,19 @@ interface ContentProps {
 }
 
 const SwiperComp: React.FC = () => {
-  const [list,setList]=useState(slideList)
-  
+  const [list, setList] = useState(slideList)
+
 
   const onMouseEvent = (id: number, event: boolean) => {
-    
-   const data= list.filter((item) => {
-      console.log(item.id,item.event)
-      if(item.id===id)
-      {
-        item['event']=!item.event
+
+    const data = list.filter((item) => {
+      console.log(item.id, item.event)
+      if (item.id === id) {
+        item['event'] = !item.event
       }
-      // if (item.id === id && event === true) {
-      //   item['event'] = true;
-      
-      // }
-      // if (item.id === id && event === false) {
-      //   item['event'] = false;
-        
-      // }
       return item
     })
-   
+
     setList(data);
 
 
@@ -74,8 +65,8 @@ const SwiperComp: React.FC = () => {
       >
         {list.map((slide: any, index: number) => (
           <SwiperSlide key={index}>
-            <SwiperImage onMouseOver={() => onMouseEvent(slide?.id, true)} onMouseOut={() => onMouseEvent(slide?.id, false)}>
-              <img src={slide.image} alt={slide.title} />
+            <SwiperImage >
+              <img src={slide.image} alt={slide.title} onMouseOver={() => onMouseEvent(slide?.id, true)} onMouseOut={() => onMouseEvent(slide?.id, false)} />
             </SwiperImage>
             <ContentContainer show={slide?.event} key={index}>
               <FieldTitle>Name: {slide?.title}</FieldTitle>
