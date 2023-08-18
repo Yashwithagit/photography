@@ -30,7 +30,6 @@ const SwiperComp: React.FC = () => {
   const onMouseEvent = (id: number, event: boolean) => {
 
     const data = list.filter((item) => {
-      console.log(item.id, item.event)
       if (item.id === id) {
         item['event'] = !item.event
       }
@@ -85,13 +84,17 @@ const SwiperComp: React.FC = () => {
           {list.map((slide: any, index: number) => (
             <SwiperSlide key={index}>
               <SwiperImage >
-                <img src={slide.image} alt={slide.title} onMouseOver={() => onMouseEvent(slide?.id, true)} onMouseOut={() => onMouseEvent(slide?.id, false)} />
+                <a target="_blank" href={slide?.link} >
+                  <img src={slide.image} alt={slide.title} onMouseOver={() => onMouseEvent(slide?.id, true)} onMouseOut={() => onMouseEvent(slide?.id, false)} /></a>
               </SwiperImage>
+              {
+                slide?.event &&
+                <ContentContainer  >
+                  <FieldTitle>Name: {slide?.title}</FieldTitle>
+                  <Button ref={buttonRef}>Go to website</Button>
+                </ContentContainer>
+              }
 
-              <ContentContainer show={slide?.event} >
-                <FieldTitle>Name: {slide?.title}</FieldTitle>
-                <a target="_blank" href={slide?.link} > <Button ref={buttonRef}>Go to website</Button></a>
-              </ContentContainer>
 
 
 
@@ -111,7 +114,7 @@ const SwiperComp: React.FC = () => {
           </div>
 
         </Swiper>
-      </SwiperContainer>
+      </SwiperContainer >
       <SwiperMobileContainer>
         <Swiper
           cssMode={true}
@@ -125,14 +128,17 @@ const SwiperComp: React.FC = () => {
           {list.map((slide: any, index: number) => (
             <SwiperSlide key={index}>
               <SwiperImage >
-
-                <img src={slide.image} alt={slide.title} onMouseOver={() => onMouseEvent(slide?.id, true)} onMouseOut={() => onMouseEvent(slide?.id, false)} />
+                <a target="_blank" href={slide?.link} >
+                  <img src={slide.image} alt={slide.title} onMouseOver={() => onMouseEvent(slide?.id, true)} onMouseOut={() => onMouseEvent(slide?.id, false)} /></a>
               </SwiperImage>
+              {
+                slide?.event &&
+                <ContentContainer  >
+                  <FieldTitle>Name: {slide?.title}</FieldTitle>
+                  <Button ref={buttonRef}>Go to website</Button>
+                </ContentContainer>
+              }
 
-              <ContentContainer show={slide?.event} >
-                <FieldTitle>Name: {slide?.title}</FieldTitle>
-                <a target="_blank" href={slide?.link} > <Button ref={buttonRef}>Go to website</Button></a>
-              </ContentContainer>
 
 
 
@@ -163,7 +169,7 @@ const SwiperImage = styled.div`
 const ContentContainer = styled.div<ContentProps>`
         position: absolute;
         top: 1rem;
-        display: ${(props) => props.show ? 'flex' : 'none'};
+        display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
