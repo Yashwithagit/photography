@@ -5,3 +5,4 @@ export const userLogin = "userLogin";
 export const userSignup = "userSignUp";
 export const userContactUs = "contactUs";
 export const userFeedback = "feedback";
+export const galleryList = "galleryList";

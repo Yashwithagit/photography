@@ -73,11 +73,11 @@ const GallerySwiper: React.FC<GallerySwiperProps> = ({
             slides?.map((slide: any, index: number) => (
               <SwiperSlide key={index} >
                 <SwiperImage >
-                  <img src={slide?.image} alt="slide_image" onClick={() => { router.push(`/galleryView?id=${slide.id}`) }} /></SwiperImage>
+                  <img src={slide?.image} alt="slide_image" onClick={() => { router.push(`/galleryView?id=${slide.id}`) }} />
 
-                <ContentContainer onClick={() => { alert('clicked'), router.push(`/galleryView?id=${slide.id}`) }}>
-                  <FieldTitle> {slide?.title}</FieldTitle>
-                </ContentContainer>
+                  <ContentContainer onClick={() => { router.push(`/galleryView?id=${slide.id}`) }}>
+                    <FieldTitle> {slide?.title}</FieldTitle>
+                  </ContentContainer></SwiperImage>
               </SwiperSlide>
             ))
           }
@@ -113,11 +113,11 @@ const GallerySwiper: React.FC<GallerySwiperProps> = ({
             slides?.map((slide: any, index: number) => (
               <SwiperSlide key={index} >
                 <SwiperImage >
-                  <img src={slide?.image} alt="slide_image" onClick={() => { router.push(`/galleryView?id=${slide.id}`) }} /></SwiperImage>
+                  <img src={slide?.image} alt="slide_image" onClick={() => { router.push(`/galleryView?id=${slide.id}`) }} />
 
-                <ContentContainer onClick={() => { router.push(`/galleryView?id=${slide.id}`) }}>
-                  <FieldTitle> {slide?.title}</FieldTitle>
-                </ContentContainer>
+                  <ContentContainer onClick={() => { router.push(`/galleryView?id=${slide.id}`) }}>
+                    <FieldTitle> {slide?.title}</FieldTitle>
+                  </ContentContainer></SwiperImage>
               </SwiperSlide>
             ))
           }
@@ -130,31 +130,32 @@ const GallerySwiper: React.FC<GallerySwiperProps> = ({
 }
 
 export default GallerySwiper
-const ContentContainer = styled.div`
+const ContentContainer = styled.figcaption`
 position: absolute;
-top: 1rem;
+top: 2rem;
 display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
-left: 24%;
+left: 12%;
 gap:1rem;
-height: 70%;
+height: 80%;
   @media screen and (max-width:768px) {
-  width: 55%;
+  width: 75%;
+  height: 70%;
   margin-top: 4rem;
   
 }
 
 `
 const FieldTitle = styled.h1`
-  font-size: 3rem;
+  font-size: 2rem;
   color: white;
    text-shadow: 2px 2px #ff0000;
   font-weight: bold;
   
 `
-const SwiperImage = styled.div`
+const SwiperImage = styled.figure`
 height: 25rem;
 @media screen and (max-width:768px) {
   display: flex;

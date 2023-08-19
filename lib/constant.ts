@@ -105,39 +105,39 @@ export const slideList = [
 export const gallerySlides = [
   {
     id: 1,
-    title: "Wedding",
+    title: "Wedding Photography",
     image: ImagePath.WeddingImage1,
   },
   {
     id: 2,
-    title: "Event",
+    title: "Portrait Photography",
     image: ImagePath.BackGroundImage,
   },
   {
     id: 3,
-    title: "Event",
+    title: "Event Photography",
     image: ImagePath.WeddingImage1,
   },
   {
     id: 4,
-    title: "Event",
+    title: "Engagement Photography",
     image: ImagePath.WeddingImage1,
   },
   {
     id: 5,
-    title: "Event",
+    title: "Beauty and Fashion",
     image: ImagePath.WeddingImage1,
   },
   {
     id: 6,
-    title: "Event",
+    title: "Corporate Photography",
     image: ImagePath.WeddingImage1,
   },
 ];
 export const galleryViewPhotoList = [
   {
     id: 1,
-    title: "Wedding",
+    title: "Wedding Photography",
     mainImage: ImagePath.WeddingImage1,
     subImageList: [
       {
@@ -164,7 +164,7 @@ export const galleryViewPhotoList = [
   },
   {
     id: 2,
-    title: "Event",
+    title: "Portrait Photography",
     mainImage: ImagePath.BackGroundImage,
     subImageList: [
       {
@@ -191,7 +191,7 @@ export const galleryViewPhotoList = [
   },
   {
     id: 3,
-    title: "Event",
+    title: "Event Photography",
     mainImage: ImagePath.WeddingImage1,
     subImageList: [
       {
@@ -218,7 +218,7 @@ export const galleryViewPhotoList = [
   },
   {
     id: 4,
-    title: "Event",
+    title: "Engagement Photography",
     mainImage: ImagePath.WeddingImage1,
     subImageList: [
       {
@@ -245,7 +245,7 @@ export const galleryViewPhotoList = [
   },
   {
     id: 5,
-    title: "Event",
+    title: "Beauty and Fashion",
     mainImage: ImagePath.WeddingImage1,
     subImageList: [
       {
@@ -272,7 +272,7 @@ export const galleryViewPhotoList = [
   },
   {
     id: 6,
-    title: "Event",
+    title: "Corporate Photography",
     mainImage: ImagePath.WeddingImage1,
     subImageList: [
       {
