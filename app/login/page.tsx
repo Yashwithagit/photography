@@ -59,11 +59,21 @@ const Login = () => {
             })
 
           } else {
-            alert("Invalid User Name and Password");
+            Swal.fire({
+              icon: "error",
+              title: "Invalid User",
+              showConfirmButton: false,
+              timer: 1500,
+            });
           }
         },
         (error) => {
-          console.log(error);
+          Swal.fire({
+            icon: "error",
+            title: `${error}`,
+            showConfirmButton: false,
+            timer: 1500,
+          });
         }
       );
   };

@@ -108,6 +108,7 @@ const Navbar: React.FC = () => {
     // if the path is a empty string then page will redirected to login
     if (path === '/') {
       localStorage.removeItem('token')
+      localStorage.removeItem('user_id')
       localStorage.clear()
     }
   }

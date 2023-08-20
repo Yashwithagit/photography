@@ -28,7 +28,7 @@ const Feedback: NextPage = () => {
     e.preventDefault();
     const formRequestData = {
       feedback: formData.feedback,
-      user_id: Number(localStorage.getItem('token'))
+      user_id: Number(localStorage.getItem('user_id'))
     };
 
     await axios

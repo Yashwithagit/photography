@@ -40,7 +40,7 @@ const ContactUs: NextPage = () => {
       contact: formData?.contact,
       message: formData?.message,
       name: formData?.name,
-      user_id:Number(localStorage.getItem('token'))
+      user_id: Number(localStorage.getItem('user_id'))
     };
 
     await axios
@@ -58,11 +58,11 @@ const ContactUs: NextPage = () => {
             }).then((result) => {
               if (result.isDismissed) {
                 setFormData({
-                  name:"",
-                  contact:"",
-                  message:"",
-                  subject:"",
-                  email:" "
+                  name: "",
+                  contact: "",
+                  message: "",
+                  subject: "",
+                  email: " "
 
                 })
               }
@@ -151,7 +151,7 @@ const ContactUs: NextPage = () => {
               <FlexContainer>
                 <FlexItem>
                   <InputField
-                    onChange={(e)=>setFormData({...formData,name:e.target.value})}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     name="name"
                     value={formData.name}
                     type="text"
@@ -160,7 +160,7 @@ const ContactUs: NextPage = () => {
                 </FlexItem>
                 <FlexItem>
                   <InputField
-                   onChange={(e)=>setFormData({...formData,contact:e.target.value})}
+                    onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
                     name="contact"
                     type="tel"
                     value={formData.contact}
@@ -177,7 +177,7 @@ const ContactUs: NextPage = () => {
                     type="email"
                     name="email"
                     value={formData.email}
-                    onChange={(e)=>setFormData({...formData,email:e.target.value})}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$"
                     title="xyz@something.com"
                     required
@@ -188,7 +188,7 @@ const ContactUs: NextPage = () => {
                   <InputField
                     name="subject"
                     value={formData.subject}
-                    onChange={(e)=>setFormData({...formData,subject:e.target.value})}
+                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                     type="text"
                     placeholder="Your Subject..."
                   />
@@ -199,7 +199,7 @@ const ContactUs: NextPage = () => {
                   <InputField
                     as="textarea"
                     value={formData.message}
-                    onChange={(e)=>setFormData({...formData,message:e.target.value})}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     name="message"
                     placeholder="Your Message"
                   />
