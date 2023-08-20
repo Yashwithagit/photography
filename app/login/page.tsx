@@ -52,7 +52,8 @@ const Login = () => {
             }).then((result) => {
               if (result.isDismissed) {
                 /* Read more about handling dismissals below */
-                localStorage.setItem("token", response.data.responseData[0].user_id);
+                localStorage.setItem("token", response.data.responseData[0].token);
+                localStorage.setItem("user_id", response.data.responseData[0].user_id);
                 router.push("/dashBoard");
               }
             })
