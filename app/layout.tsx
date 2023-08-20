@@ -14,7 +14,8 @@ export default function RootLayout({
   return (
     <html>
       <body suppressHydrationWarning={true} >
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        <StyledComponentsRegistry>
+          {children}</StyledComponentsRegistry>
       </body>
     </html>
   )

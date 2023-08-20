@@ -197,7 +197,7 @@ const ContactUs: NextPage = () => {
               <FlexContainer>
                 <FlexItem>
                   <InputField
-                    type="text"
+                    as="textarea"
                     value={formData.message}
                     onChange={(e)=>setFormData({...formData,message:e.target.value})}
                     name="message"
