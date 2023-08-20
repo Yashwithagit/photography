@@ -173,7 +173,7 @@ const ContentContainer = styled.div<ContentProps>`
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        left: 15%;
+        left: 17%;
         gap:1rem;
         height: 70%;
         @media screen and (max-width:768px) {
@@ -191,11 +191,11 @@ const FieldTitle = styled.h1`
         `
 
 const Button = styled.button`
-          padding: 1rem;
+          padding: 1rem 1.2rem;
           background-color: #d72fee;
           outline: none;
           border: none;
           border-radius: 1.5rem;
           color: white;
-
+font-size: 1.2rem;
         `

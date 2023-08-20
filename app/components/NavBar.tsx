@@ -3,12 +3,12 @@
 
 import { AppColors, NavbarData } from "@/lib/constant";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faXmark } from "@fortawesome/free-solid-svg-icons/faXmark";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import PageWithAuth from "@/context/auth";
 
 
@@ -19,7 +19,7 @@ const NavbarContainer = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding:10px 25px;
+  padding:20px 25px;
   background-color: #1b2430;
 box-shadow: 0 5px 15px rgba(0,0,0,0.06);
 
@@ -40,7 +40,7 @@ const NavBar = styled.main<NavBarItemProps>`
   align-items: flex-start;
   flex-direction: column;
   position: fixed;
-  top: 10%;
+top: 6%;
   right:${(props) => props.active ? '-300px' : "0px"} ;
   width: 300px;
   z-index: 2;

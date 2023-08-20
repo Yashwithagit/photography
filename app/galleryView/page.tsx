@@ -4,9 +4,7 @@ import Footer from '@/components/Footer'
 import NavBar from '@/components/NavBar'
 import { NextPage } from 'next'
 import React, { useEffect, useState } from 'react'
-import { gallerySlides, galleryViewPhotoList } from '@/lib/constant';
-import GallerySwiper from '@/components/GallerySwiper';
-import { BackArrowContainer, PageTitle } from '@/styles/globalStyles';
+import { BackArrowContainer } from '@/styles/globalStyles';
 import { useRouter, useSearchParams } from 'next/navigation'
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

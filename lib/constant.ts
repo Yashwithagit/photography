@@ -13,7 +13,12 @@ export const AppColors = {
 // Image Path
 export const ImagePath = {
   BackGroundImage: `/assets/background/bg.jpg`,
-  WeddingImage1: `/assets/wedding/wed1.jpeg`,
+  wedding: `/assets/wedding.jpg`,
+  Portrait: `/assets/potrait.jpg`,
+  Beauty: `/assets/beauty.jpg`,
+  Corporate: `/assets/corperate.jpg`,
+  Event: `/assets/event.jpg`,
+  Engagement: `/assets/engagement.jpg`,
 };
 
 export const NavbarData = [
@@ -106,195 +111,31 @@ export const gallerySlides = [
   {
     id: 1,
     title: "Wedding Photography",
-    image: ImagePath.WeddingImage1,
+    image: ImagePath.wedding,
   },
   {
     id: 2,
     title: "Portrait Photography",
-    image: ImagePath.BackGroundImage,
+    image: ImagePath.Portrait,
   },
   {
     id: 3,
     title: "Event Photography",
-    image: ImagePath.WeddingImage1,
+    image: ImagePath.Event,
   },
   {
     id: 4,
     title: "Engagement Photography",
-    image: ImagePath.WeddingImage1,
+    image: ImagePath.Engagement,
   },
   {
     id: 5,
     title: "Beauty and Fashion",
-    image: ImagePath.WeddingImage1,
+    image: ImagePath.Beauty,
   },
   {
     id: 6,
     title: "Corporate Photography",
-    image: ImagePath.WeddingImage1,
-  },
-];
-export const galleryViewPhotoList = [
-  {
-    id: 1,
-    title: "Wedding Photography",
-    mainImage: ImagePath.WeddingImage1,
-    subImageList: [
-      {
-        id: 1,
-        image: ImagePath.BackGroundImage,
-      },
-      {
-        id: 2,
-        image: ImagePath.BackGroundImage,
-      },
-      {
-        id: 3,
-        image: ImagePath.BackGroundImage,
-      },
-      {
-        id: 4,
-        image: ImagePath.BackGroundImage,
-      },
-      {
-        id: 5,
-        image: ImagePath.BackGroundImage,
-      },
-    ],
-  },
-  {
-    id: 2,
-    title: "Portrait Photography",
-    mainImage: ImagePath.BackGroundImage,
-    subImageList: [
-      {
-        id: 1,
-        image: ImagePath.BackGroundImage,
-      },
-      {
-        id: 2,
-        image: ImagePath.BackGroundImage,
-      },
-      {
-        id: 3,
-        image: ImagePath.BackGroundImage,
-      },
-      {
-        id: 4,
-        image: ImagePath.BackGroundImage,
-      },
-      {
-        id: 5,
-        image: ImagePath.BackGroundImage,
-      },
-    ],
-  },
-  {
-    id: 3,
-    title: "Event Photography",
-    mainImage: ImagePath.WeddingImage1,
-    subImageList: [
-      {
-        id: 1,
-        image: ImagePath.BackGroundImage,
-      },
-      {
-        id: 2,
-        image: ImagePath.BackGroundImage,
-      },
-      {
-        id: 3,
-        image: ImagePath.BackGroundImage,
-      },
-      {
-        id: 4,
-        image: ImagePath.BackGroundImage,
-      },
-      {
-        id: 5,
-        image: ImagePath.BackGroundImage,
-      },
-    ],
-  },
-  {
-    id: 4,
-    title: "Engagement Photography",
-    mainImage: ImagePath.WeddingImage1,
-    subImageList: [
-      {
-        id: 1,
-        image: ImagePath.BackGroundImage,
-      },
-      {
-        id: 2,
-        image: ImagePath.BackGroundImage,
-      },
-      {
-        id: 3,
-        image: ImagePath.BackGroundImage,
-      },
-      {
-        id: 4,
-        image: ImagePath.BackGroundImage,
-      },
-      {
-        id: 5,
-        image: ImagePath.BackGroundImage,
-      },
-    ],
-  },
-  {
-    id: 5,
-    title: "Beauty and Fashion",
-    mainImage: ImagePath.WeddingImage1,
-    subImageList: [
-      {
-        id: 1,
-        image: ImagePath.BackGroundImage,
-      },
-      {
-        id: 2,
-        image: ImagePath.BackGroundImage,
-      },
-      {
-        id: 3,
-        image: ImagePath.BackGroundImage,
-      },
-      {
-        id: 4,
-        image: ImagePath.BackGroundImage,
-      },
-      {
-        id: 5,
-        image: ImagePath.BackGroundImage,
-      },
-    ],
-  },
-  {
-    id: 6,
-    title: "Corporate Photography",
-    mainImage: ImagePath.WeddingImage1,
-    subImageList: [
-      {
-        id: 1,
-        image: ImagePath.BackGroundImage,
-      },
-      {
-        id: 2,
-        image: ImagePath.BackGroundImage,
-      },
-      {
-        id: 3,
-        image: ImagePath.BackGroundImage,
-      },
-      {
-        id: 4,
-        image: ImagePath.BackGroundImage,
-      },
-      {
-        id: 5,
-        image: ImagePath.BackGroundImage,
-      },
-    ],
+    image: ImagePath.Corporate,
   },
 ];

@@ -14,6 +14,7 @@ import {
 import Link from "next/link";
 import * as MdIcons from "react-icons/md";
 import * as RiIcons from "react-icons/ri";
+import { FaAddressBook } from "react-icons/fa";
 import axios from "axios";
 import { API_BASE_PATH, userSignup } from "@/lib/apiPath";
 import { useRouter } from "next/navigation";
@@ -35,6 +36,7 @@ const SignUp: NextPage = () => {
     password: "",
     address: "",
     contact: "",
+
   });
 
   // handle Sign Up form submit
@@ -150,6 +152,22 @@ const SignUp: NextPage = () => {
               }
             />
           </FormField>
+          <FormField>
+            <FormFieldIcon>
+              <FaAddressBook />
+            </FormFieldIcon>
+            <FormFieldInput
+              name={formData.address}
+              value={formData.address}
+              type="text"
+              required
+              placeholder="Address"
+              onChange={(e) =>
+                setFormData({ ...formData, address: String(e.target.value) })
+              }
+            />
+          </FormField>
+
 
 
           <FormField>
