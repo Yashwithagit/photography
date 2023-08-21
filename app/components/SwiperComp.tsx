@@ -17,30 +17,70 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowAltCircleLeft, faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 import { SwiperContainer, SwiperMobileContainer } from '@/styles/globalStyles';
 import Link from 'next/link';
+import Swal from 'sweetalert2';
+import axios from 'axios';
+import { API_BASE_PATH, photographerList } from '@/lib/apiPath';
 
 interface ContentProps {
   show?: boolean;
 }
 
+
 const SwiperComp: React.FC = () => {
-  const [list, setList] = useState(slideList);
-  const buttonRef = useRef<HTMLButtonElement>(null);
 
 
-  const onMouseEvent = (id: number, event: boolean) => {
+  const [photoList, sePhotoList] = useState([])
+  const getPhotographerList = async () => {
+    await axios
+      .get(API_BASE_PATH + photographerList, {
+        headers: { "content-type": "application/x-www-form-urlencoded" },
+      })
+      .then(
+        (response) => {
+          if (response.data.responseCode === 100001) {
+            const newData = response?.data?.responseData?.map(
+              (item: any, index: number) => {
+                item["index"] = index + 1;
+                return item;
+              }
+            );
+            sePhotoList(newData);
+          } else {
+            Swal.fire({
+              icon: "error",
+              title: `Something went wrong`,
+              showConfirmButton: true,
+            });
+          }
+        },
+        (error) => {
+          Swal.fire({
+            icon: "error",
+            title: `${error}`,
+            showConfirmButton: true,
+          });
+        }
+      );
+  };
+  useEffect(() => {
+    getPhotographerList()
+  }, [])
 
-    const data = list.filter((item) => {
-      if (item.id === id) {
+  const onMouseEvent = (id: number) => {
+
+    const data = photoList.filter((item: any) => {
+      if (item.pid === id) {
+
         item['event'] = !item.event
       }
       return item
     })
 
-    setList(data);
+    sePhotoList(data);
 
 
   }
-  console.log(buttonRef)
+
   return (
     <>
       <SwiperContainer>
@@ -51,8 +91,8 @@ const SwiperComp: React.FC = () => {
           }}
           effect={'coverflow'}
           grabCursor={true}
-          loop={true}
-          slidesPerView={2}
+          // loop={true}
+          slidesPerView={1}
           coverflowEffect={{
             rotate: 0,
             stretch: 0,
@@ -81,17 +121,17 @@ const SwiperComp: React.FC = () => {
           modules={[EffectCoverflow, Pagination, Navigation, Keyboard, Autoplay]}
           className="swiper_container"
         >
-          {list.map((slide: any, index: number) => (
+          {photoList.map((slide: any, index: number) => (
             <SwiperSlide key={index}>
-              <SwiperImage >
-                <a target="_blank" href={slide?.link} >
-                  <img src={slide.image} alt={slide.title} onMouseOver={() => onMouseEvent(slide?.id, true)} onMouseOut={() => onMouseEvent(slide?.id, false)} /></a>
+              <SwiperImage onMouseOver={() => onMouseEvent(slide?.pid)} onMouseOut={() => onMouseEvent(slide?.pid)}>
+                <LinkContainer target="_blank" href={slide?.website_link} >
+                  <img src={slide.url} alt={''} /></LinkContainer>
               </SwiperImage>
               {
                 slide?.event &&
                 <ContentContainer  >
-                  <FieldTitle>Name: {slide?.title}</FieldTitle>
-                  <Button ref={buttonRef}>Go to website</Button>
+                  <FieldTitle>Name: {slide?.first_name + slide?.last_name}</FieldTitle>
+                  <Button >Go to website</Button>
                 </ContentContainer>
               }
 
@@ -125,17 +165,17 @@ const SwiperComp: React.FC = () => {
           modules={[Navigation, Pagination, Mousewheel, Keyboard]}
           className="mobile-swiper"
         >
-          {list.map((slide: any, index: number) => (
+          {photoList.map((slide: any, index: number) => (
             <SwiperSlide key={index}>
-              <SwiperImage >
-                <a target="_blank" href={slide?.link} >
-                  <img src={slide.image} alt={slide.title} onMouseOver={() => onMouseEvent(slide?.id, true)} onMouseOut={() => onMouseEvent(slide?.id, false)} /></a>
+              <SwiperImage onMouseOver={() => onMouseEvent(slide?.pid)} onMouseOut={() => onMouseEvent(slide?.pid)}>
+                <a target="_blank" href={slide?.website_link} >
+                  <img src={slide.url} alt={''} /></a>
               </SwiperImage>
               {
                 slide?.event &&
                 <ContentContainer  >
-                  <FieldTitle>Name: {slide?.title}</FieldTitle>
-                  <Button ref={buttonRef}>Go to website</Button>
+                  <FieldTitle>Name: {slide?.first_name + slide?.last_name}</FieldTitle>
+                  <Button>Go to website</Button>
                 </ContentContainer>
               }
 
@@ -152,12 +192,15 @@ const SwiperComp: React.FC = () => {
 }
 export default React.memo(SwiperComp)
 const SwiperImage = styled.div`
-      width: 100%;
+      width: 20rem;
       height: 25rem;
-      :hover {
+      
+        :hover {
+           border-radius: 2rem;
         filter: blur(0.1rem);
-      border: 4px solid white;
+      border: 4px solid white ;
 }
+    
 @media screen and (max-width:768px) {
   display: flex;
   justify-content: center;
@@ -169,15 +212,18 @@ const SwiperImage = styled.div`
 const ContentContainer = styled.div<ContentProps>`
         position: absolute;
         top: 1rem;
+       
+         border-radius: 2rem;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        left: 17%;
+        left: 10rem;
         gap:1rem;
-        height: 70%;
+        height: 17rem;
+        
         @media screen and (max-width:768px) {
-  width: 70%;
+  
   display: ${(props) => props.show ? 'flex' : 'none'};
   margin-top: 4rem;
   
@@ -186,7 +232,9 @@ const ContentContainer = styled.div<ContentProps>`
         `
 const FieldTitle = styled.h1`
         font-size: 1.5rem;
-        color: white;
+  color: white;
+   text-shadow: 2px 2px #ff0000;
+  font-weight: bold;
 
         `
 
@@ -199,3 +247,11 @@ const Button = styled.button`
           color: white;
 font-size: 1.2rem;
         `
+
+
+const LinkContainer = styled.a`
+ width: 30rem;
+ display: block;
+ border-radius:2rem;
+      height: 25rem;
+`
