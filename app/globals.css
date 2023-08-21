@@ -104,7 +104,7 @@ body {
   position: relative;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
   .swiper_container {
     height: 47rem;
   }
@@ -115,6 +115,12 @@ body {
   .mobile-swiper .swiper-slide img {
     width: 24rem !important;
     height: 23rem !important;
+  }
+}
+@media screen and (max-width: 500px) and (min-width: 300px) {
+  .mobile-swiper .swiper-slide img {
+    width: 19rem !important;
+    height: 19rem !important;
   }
 }
 

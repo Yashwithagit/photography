@@ -200,6 +200,14 @@ const SwiperImage = styled.div`
         filter: blur(0.1rem);
       border: 4px solid white ;
 }
+  @media screen and (max-width:500px)and(min-width:768px)  {
+        width: 24rem !important;
+    height: 20rem !important;
+      }
+         @media screen and (max-width: 500px) and (min-width: 300px) {
+        width: 19rem !important;
+    height: 19rem !important;
+      }
     
 @media screen and (max-width:768px) {
   display: flex;
@@ -218,16 +226,17 @@ const ContentContainer = styled.div<ContentProps>`
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        left: 10rem;
+       
         gap:1rem;
-        height: 17rem;
+        height: 25rem;
         
-        @media screen and (max-width:768px) {
+        @media screen and(min-width:500px) {
   
-  display: ${(props) => props.show ? 'flex' : 'none'};
-  margin-top: 4rem;
+  margin-top: 2rem;
   
 }
+ 
+
 
         `
 const FieldTitle = styled.h1`
@@ -254,4 +263,16 @@ const LinkContainer = styled.a`
  display: block;
  border-radius:2rem;
       height: 25rem;
+       @media screen and (max-width:768px)  {
+         width: 24rem !important;
+    height: 20rem !important;
+       }
+      @media screen and (max-width:500px)and(min-width:768px)  {
+        width: 24rem !important;
+    height: 20rem !important;
+      }
+         @media screen and (max-width: 500px) and (min-width: 300px) {
+        width: 19rem !important;
+    height: 19rem !important;
+      }
 `

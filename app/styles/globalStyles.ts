@@ -149,5 +149,6 @@ export const SwiperMobileContainer = styled.main`
   padding-bottom: 3rem;
   @media screen and (max-width: 768px) {
     display: block;
+    padding-bottom: 1rem;
   }
 `;
