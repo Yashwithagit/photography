@@ -168,8 +168,8 @@ const SwiperComp: React.FC = () => {
           {photoList.map((slide: any, index: number) => (
             <SwiperSlide key={index}>
               <SwiperImage onMouseOver={() => onMouseEvent(slide?.pid)} onMouseOut={() => onMouseEvent(slide?.pid)}>
-                <a target="_blank" href={slide?.website_link} >
-                  <img src={slide.url} alt={''} /></a>
+                <LinkContainer target="_blank" href={slide?.website_link} >
+                  <img src={slide.url} alt={''} /></LinkContainer>
               </SwiperImage>
               {
                 slide?.event &&
