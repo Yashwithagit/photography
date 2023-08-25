@@ -229,12 +229,16 @@ const ContentContainer = styled.div<ContentProps>`
        
         gap:1rem;
         height: 25rem;
-        
-        @media screen and(min-width:500px) {
-  
+        left: 10rem;
+       @media screen and (max-width:768px) and (min-width:500px) {
+  left: 40%;
   margin-top: 2rem;
   
 }
+  
+         @media screen and (max-width: 500px) and (min-width: 300px) {
+        left: 30%;
+      }
  
 
 
