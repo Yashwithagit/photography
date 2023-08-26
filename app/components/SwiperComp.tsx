@@ -124,7 +124,7 @@ const SwiperComp: React.FC = () => {
           {photoList.map((slide: any, index: number) => (
             <SwiperSlide key={index}>
               <SwiperImage onMouseOver={() => onMouseEvent(slide?.pid)} onMouseOut={() => onMouseEvent(slide?.pid)}>
-                <LinkContainer target="_blank" href={slide?.website_link} >
+                <LinkContainer target="_blank" href={`${slide?.website_link}&&user_id=${localStorage.getItem('user_id')} `} >
                   <img src={slide.url} alt={''} /></LinkContainer>
               </SwiperImage>
               {
@@ -168,7 +168,7 @@ const SwiperComp: React.FC = () => {
           {photoList.map((slide: any, index: number) => (
             <SwiperSlide key={index}>
               <SwiperImage onMouseOver={() => onMouseEvent(slide?.pid)} onMouseOut={() => onMouseEvent(slide?.pid)}>
-                <LinkContainer target="_blank" href={slide?.website_link} >
+                <LinkContainer target="_blank" href={`${slide?.website_link}&&user_id=${localStorage.getItem('user_id')}`} >
                   <img src={slide.url} alt={''} /></LinkContainer>
               </SwiperImage>
               {
