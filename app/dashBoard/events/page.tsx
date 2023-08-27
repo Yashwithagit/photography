@@ -17,6 +17,7 @@ const Events: NextPage = () => {
   const router = useRouter()
   const searchParams = useSearchParams()
   const [eventLists, setEventList] = useState<any>([]);
+  const [websiteLink, setWebsiteLink] = useState()
   const id = searchParams.get('id')
   const getEventList = async () => {
     await axios
@@ -33,6 +34,7 @@ const Events: NextPage = () => {
               }
             );
             setEventList(newData);
+            setWebsiteLink(newData[0]?.website_link)
           } else {
             Swal.fire({
               icon: "error",
@@ -58,13 +60,13 @@ const Events: NextPage = () => {
     <>
       <NavBar />
       <BackArrowContainer>
-        <FontAwesomeIcon icon={faArrowLeft} style={{ fontSize: "4rem", color: "#17cf97", display: 'flex', justifyContent: "flex-start", cursor: "pointer" }} onClick={() => router.push('/gallery')} />
+        <FontAwesomeIcon icon={faArrowLeft} style={{ fontSize: "4rem", color: "#17cf97", display: 'flex', justifyContent: "flex-start", cursor: "pointer" }} onClick={() => router.push('/dashBoard')} />
         <PageTitleContainer> <h1>Events</h1></PageTitleContainer>
       </BackArrowContainer>
 
 
       <OuterContainer>
-        <ButtonContainer>  <Button>Go to Website</Button></ButtonContainer>
+        <ButtonContainer>  <a target='_blank' href={`${websiteLink}&&user_id=${localStorage.getItem('user_id')} `}><Button >Go to Website</Button></a></ButtonContainer>
         <GalleryContainer row={eventList ? Math.ceil(eventLists.length / 3) : 1}>
           {
             eventLists.map((item: any, index: number) => (
@@ -80,7 +82,7 @@ const Events: NextPage = () => {
               </HoverContainer>
             ))}
         </GalleryContainer>
-      </OuterContainer>
+      </OuterContainer >
       <Footer />
     </>
   );
