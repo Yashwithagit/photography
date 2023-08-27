@@ -5,7 +5,7 @@ import NavBar from '@/components/NavBar'
 import { NextPage } from 'next'
 import React from 'react'
 import { gallerySlides } from '@/lib/constant';
-import { PageTitle } from '@/styles/globalStyles';
+import { GalleryContainer, OuterContainer, PageTitle } from '@/styles/globalStyles';
 import PageWithAuth from '@/context/auth';
 import styled from 'styled-components';
 import { useRouter } from 'next/navigation';
@@ -34,28 +34,8 @@ const Gallery: NextPage = () => {
 }
 
 export default PageWithAuth(Gallery)
-const GalleryContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);  
-  grid-gap: 2rem;
-  justify-items: center;
-  align-items: center;
-  @media screen and (max-width:680px) {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 3rem;
-  
-}
-`;
-const OuterContainer = styled.div`
-  margin: 2rem 1rem; 
-  @media screen and (max-width:680px) {
- margin: 1rem;
-  
-}
-`;
+
+
 
 const GalleryImg = styled.img`
   display: grid;

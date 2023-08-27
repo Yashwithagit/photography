@@ -152,3 +152,40 @@ export const SwiperMobileContainer = styled.main`
     padding-bottom: 1rem;
   }
 `;
+
+export const Button = styled.button`
+  padding: 1rem 1.2rem;
+  background-color: #d72fee;
+  outline: none;
+  border: none;
+  border-radius: 1.5rem;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.4);
+`;
+
+export const OuterContainer = styled.div`
+  margin: 2rem 1rem;
+  @media screen and (max-width: 680px) {
+    margin: 1rem;
+  }
+`;
+interface gridProps {
+  row?: number;
+}
+export const GalleryContainer = styled.div<gridProps>`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: ${(props) =>
+    props.row ? `repeat(${props.row}, 1fr)` : `repeat(2, 1fr)`};
+  grid-gap: 2rem;
+  justify-items: center;
+  align-items: center;
+  @media screen and (max-width: 680px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+`;
