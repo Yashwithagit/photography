@@ -17,6 +17,7 @@ const Events: NextPage = () => {
   const router = useRouter()
   const searchParams = useSearchParams()
   const [eventLists, setEventList] = useState<any>([]);
+  const [websiteLink, setWebsiteLink] = useState()
   const id = searchParams.get('id')
   const getEventList = async () => {
     await axios
@@ -33,6 +34,7 @@ const Events: NextPage = () => {
               }
             );
             setEventList(newData);
+            setWebsiteLink(newData[0]?.website_link)
           } else {
             Swal.fire({
               icon: "error",
@@ -64,7 +66,7 @@ const Events: NextPage = () => {
 
 
       <OuterContainer>
-        <ButtonContainer>  <Button>Go to Website</Button></ButtonContainer>
+        <ButtonContainer>  <Button onClick={() => `${websiteLink}&&user_id=${localStorage.getItem('user_id')} `}  >Go to Website</Button></ButtonContainer>
         <GalleryContainer row={eventList ? Math.ceil(eventLists.length / 3) : 1}>
           {
             eventLists.map((item: any, index: number) => (
