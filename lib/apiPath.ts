@@ -6,5 +6,5 @@ export const userSignup = "userSignUp";
 export const userContactUs = "contactUs";
 export const userFeedback = "feedback";
 export const galleryList = "galleryList";
-export const eventList = "subscribedEvent";
+export const eventList = "subscribedEvent/";
 export const photographerList = "photographerList";
