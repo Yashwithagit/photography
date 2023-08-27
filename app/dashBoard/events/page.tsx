@@ -60,7 +60,7 @@ const Events: NextPage = () => {
     <>
       <NavBar />
       <BackArrowContainer>
-        <FontAwesomeIcon icon={faArrowLeft} style={{ fontSize: "4rem", color: "#17cf97", display: 'flex', justifyContent: "flex-start", cursor: "pointer" }} onClick={() => router.push('/gallery')} />
+        <FontAwesomeIcon icon={faArrowLeft} style={{ fontSize: "4rem", color: "#17cf97", display: 'flex', justifyContent: "flex-start", cursor: "pointer" }} onClick={() => router.push('/dashBoard')} />
         <PageTitleContainer> <h1>Events</h1></PageTitleContainer>
       </BackArrowContainer>
 
