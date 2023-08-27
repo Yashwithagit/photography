@@ -15,10 +15,11 @@ import React, { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowAltCircleLeft, faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
-import { SwiperContainer, SwiperMobileContainer } from '@/styles/globalStyles';
+import { Button, SwiperContainer, SwiperMobileContainer } from '@/styles/globalStyles';
 import Link from 'next/link';
 import Swal from 'sweetalert2';
 import axios from 'axios';
+import { useRouter } from 'next/navigation';
 import { API_BASE_PATH, photographerList } from '@/lib/apiPath';
 
 interface ContentProps {
@@ -28,7 +29,7 @@ interface ContentProps {
 
 const SwiperComp: React.FC = () => {
 
-
+  const router = useRouter()
   const [photoList, sePhotoList] = useState([])
   const getPhotographerList = async () => {
     await axios
@@ -124,14 +125,14 @@ const SwiperComp: React.FC = () => {
           {photoList.map((slide: any, index: number) => (
             <SwiperSlide key={index}>
               <SwiperImage onMouseOver={() => onMouseEvent(slide?.pid)} onMouseOut={() => onMouseEvent(slide?.pid)}>
-                <LinkContainer target="_blank" href={slide?.website_link} >
+                <LinkContainer onClick={() => router.push(`/dashBoard/events?id=${slide?.pid}`)} >
                   <img src={slide.url} alt={''} /></LinkContainer>
               </SwiperImage>
               {
                 slide?.event &&
                 <ContentContainer  >
                   <FieldTitle>Name: {slide?.first_name + slide?.last_name}</FieldTitle>
-                  <Button >Go to website</Button>
+                  <Button >View Events</Button>
                 </ContentContainer>
               }
 
@@ -168,14 +169,14 @@ const SwiperComp: React.FC = () => {
           {photoList.map((slide: any, index: number) => (
             <SwiperSlide key={index}>
               <SwiperImage onMouseOver={() => onMouseEvent(slide?.pid)} onMouseOut={() => onMouseEvent(slide?.pid)}>
-                <LinkContainer target="_blank" href={slide?.website_link} >
+                <LinkContainer onClick={() => router.push(`events?id=${slide?.pid}`)} >
                   <img src={slide.url} alt={''} /></LinkContainer>
               </SwiperImage>
               {
                 slide?.event &&
                 <ContentContainer  >
                   <FieldTitle>Name: {slide?.first_name + slide?.last_name}</FieldTitle>
-                  <Button>Go to website</Button>
+                  <Button >View Events</Button>
                 </ContentContainer>
               }
 
@@ -251,19 +252,12 @@ const FieldTitle = styled.h1`
 
         `
 
-const Button = styled.button`
-          padding: 1rem 1.2rem;
-          background-color: #d72fee;
-          outline: none;
-          border: none;
-          border-radius: 1.5rem;
-          color: white;
-font-size: 1.2rem;
-        `
+
 
 
 const LinkContainer = styled.a`
  width: 30rem;
+ cursor: pointer;
  display: block;
  border-radius:2rem;
       height: 25rem;
