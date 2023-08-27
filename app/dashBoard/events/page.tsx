@@ -66,7 +66,7 @@ const Events: NextPage = () => {
 
 
       <OuterContainer>
-        <ButtonContainer>  <Button onClick={() => `${websiteLink}&&user_id=${localStorage.getItem('user_id')} `}  >Go to Website</Button></ButtonContainer>
+        <ButtonContainer>  <a target='_blank' href={`${websiteLink}&&user_id=${localStorage.getItem('user_id')} `}><Button >Go to Website</Button></a></ButtonContainer>
         <GalleryContainer row={eventList ? Math.ceil(eventLists.length / 3) : 1}>
           {
             eventLists.map((item: any, index: number) => (
@@ -82,7 +82,7 @@ const Events: NextPage = () => {
               </HoverContainer>
             ))}
         </GalleryContainer>
-      </OuterContainer>
+      </OuterContainer >
       <Footer />
     </>
   );
