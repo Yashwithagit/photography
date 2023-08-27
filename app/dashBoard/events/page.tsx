@@ -20,8 +20,8 @@ const Events: NextPage = () => {
   const id = searchParams.get('id')
   const getEventList = async () => {
     await axios
-      .get(API_BASE_PATH + eventList, {
-        headers: { "content-type": "application/x-www-form-urlencoded" },
+      .get(API_BASE_PATH + eventList + id, {
+        headers: { "content-type": "application/x-www-form-urlencoded" }
       })
       .then(
         (response) => {
@@ -32,7 +32,7 @@ const Events: NextPage = () => {
                 return item;
               }
             );
-            setEventList(newData.filter((item: { p_id: number; }) => item.p_id === Number(id)));
+            setEventList(newData);
           } else {
             Swal.fire({
               icon: "error",
